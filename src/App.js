@@ -1,10 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import Navigation from "./components/navigation/Navigation";
+import "tachyons";
+import Logo from "./components/navigation/Logo/Logo";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div>
+      <Navigation />
+      <Logo />
+      {/* 
+      <ImageLinkForm />
+      <FaceRecognition /> */}
     </div>
   );
 }
