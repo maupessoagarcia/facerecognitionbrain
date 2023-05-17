@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "./components/navigation/Navigation";
 import "tachyons";
 import Logo from "./components/navigation/Logo/Logo";
@@ -18,6 +18,17 @@ function App() {
   const particlesLoaded = useCallback(async (container) => {
     await console.log(container);
   }, []);
+
+  const [input1, setInput1] = useState("");
+
+  const onInputChange = (event) => {
+    console.log(event.target.value);
+    setInput1(event.target.value);
+  };
+
+  const onSubmit = () => {
+    console.log("You CLICKED -> " + input1);
+  };
 
   return (
     <div>
@@ -74,7 +85,7 @@ function App() {
       <Navigation />
       <Logo />
       <Rank />
-      <ImageLinkForm />
+      <ImageLinkForm onInputChange={onInputChange} onSubmit={onSubmit} />
       {/* 
       
       <FaceRecognition /> */}
